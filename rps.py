@@ -22,8 +22,8 @@ while True:
     print('user choice is: ' + choice_name)
     print('\n Now its computer turn.......')
 
-
-    comp_choice = random.choice('RPS')
+    options = ['R', 'P', 'S']
+    comp_choice = random.choice(options)
 
 
     if comp_choice == 'R':
