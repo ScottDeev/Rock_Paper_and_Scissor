@@ -1,36 +1,35 @@
+import string
 import random
 
 print("Winning Rules for the game as follows: \n"
 + "Rock vs paper -> paper wins \n" + "Rock vs Scissor -> Rock wins \n" + "paper vs Scissor -> scissor wins")
 
 while True:
-    print("Enter choice \n 1 for Rock, \n 2 for paper, and \n 3 for scissor \n")
+    print("Enter choice \n R for Rock, \n P for paper, and \n S for scissor \n")
 
-    choice = int(input("User turn: "))
+    choice = input("User turn: ")
 
-    while choice > 3 or choice < 1:
-        choice = int(input('Enter valid input: '))
     
-    if choice == 1:
+    if choice == 'R':
         choice_name = 'Rock'
-    elif coice == 2:
+    elif choice == 'P':
         choice_name = 'paper'
-    else:
+    elif choice == 'S':
         choice_name = 'scissor'
+    else:
+        choice = input('Enter valid input: ')
+
 
     print('user choice is: ' + choice_name)
     print('\n Now its computer turn.......')
 
 
-    comp_choice = random.randint(1, 3)
+    comp_choice = random.choice('RPS')
 
 
-    while comp_choice == choice:
-        comp_choice = random.randint(1, 3)
-
-    if comp_choice == 1:
+    if comp_choice == 'R':
         comp_choice_name = 'Rock'
-    elif comp_choice == 2:
+    elif comp_choice == 'P':
         comp_choice_name = 'paper'
     else:
         comp_choice_name = 'scissor'
@@ -39,26 +38,34 @@ while True:
     print('Computer choice is: ' + comp_choice_name)
     print(choice_name + ' V/s ' + comp_choice_name)
 
-    if((choice == 1 and comp_choice ==2) or (choice ==2 and comp_choice ==1)):
+    
+    if((choice == 'R' and comp_choice =='P') or (choice =='P' and comp_choice =='R')):
         print('paper wins => ', end='')
         result = 'paper'
-    elif((choice == 1 and comp_choice ==3) or (choice ==3 and comp_choice ==1)):
+    elif((choice == 'R' and comp_choice =='S') or (choice =='S' and comp_choice =='R')):
         print('Rock wins =>', end='')
         result = 'Rock'
-    else:
+    elif((choice == 'P' and comp_choice =='S') or (choice =='S' and comp_choice =='P')):
         print('scissor wins =>', end='')
         result = 'scissor'
-
-    
-    if result == choice_name:
-        print('<== User wins ==>')
     else:
-        print('<== Computer wins ==>')
-    
-    print('Do you want to play again? (Y/N)')
+        print('No Winner ', end='')
+
+
+    if result == choice_name :
+        if result != comp_choice_name:
+            print(' <== User wins ==>')
+    elif result == comp_choice_name:
+        if result != choice_name:
+            print(' <== Computer wins ==>')
+    print('\nDo you want to play again? (Y/N)')
     ans = input()
 
     if ans == 'n' or ans == 'N':
+        break
+    elif ans == 'y' or ans == 'Y':
+        continue
+    else:
         break
 
 print('\n Thanks for playing')
