@@ -1,4 +1,3 @@
-import string
 import random
 
 print("Winning Rules for the game as follows: \n"
