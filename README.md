@@ -19,11 +19,11 @@ A player who decides to play rock will beat another player who has chosen scisso
 **
 if (player == rock) and (computer == paper); computer wins
 
-if (player == paper) and (computer == paper); tie
+if (player == paper) and (computer == paper); No winner
 
 if (player == scissors) and (computer == paper); player wins
 
-if (player == rock) and (computer == rock); tie
+if (player == rock) and (computer == rock); No winner
 
 if (player == paper) and (computer == rock); player wins
 
@@ -33,10 +33,10 @@ if (player == rock) and (computer == scissors); player wins
 
 if (player == paper) and (computer == scissors); computer wins
 
-if (player == scissors) and (computer == scissors); tie
+if (player == scissors) and (computer == scissors); No winner
 
 **Algorithm**
-1. The computer will choose a random choice between "Rock", "Paper" and "Scissor". Logic - = We will generate a random number between 1 - 3; if the number is 1 --> Computer will choose Rock = 2 --> Computer will choose Paper = 3 --> Computer will choose Scissor
+1. The computer will choose a random choice between "Rock", "Paper" and "Scissor". Logic - = We will generate a random letter between RPS; if the number is R --> Computer will choose Rock = P --> Computer will choose Paper = S --> Computer will choose Scissor
 
 2. User Input will be taken.
 
